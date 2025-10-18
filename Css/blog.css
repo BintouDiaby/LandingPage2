@@ -1,0 +1,56 @@
+/* ==== BASE ==== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+:root{
+  --bg:#f7f5ff; --surface:#ffffff; --text:#201a3b; --muted:#5d5680;
+  --violet:#6d5efc; --jaune:#ffd34e; --line:#ece8ff; --shadow:0 14px 40px rgba(93,86,128,.16);
+}
+*{box-sizing:border-box} html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Poppins,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;line-height:1.6}
+img{display:block;max-width:100%;height:auto}
+.container{width:min(1120px,90%);margin-inline:auto}
+
+/* ==== NAV ==== */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--text);font-weight:700}
+.brand-logo{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;
+  background:linear-gradient(135deg,var(--violet),#9b8bff);color:#fff;box-shadow:var(--shadow)}
+.nav-links a{color:var(--muted);text-decoration:none;font-weight:600;margin:0 .8rem}
+.nav-links a:hover{color:var(--text)}
+
+/* ==== HERO ==== */
+.page-hero{padding:64px 0 12px;text-align:center}
+.page-hero h1{font-size:clamp(2.2rem,1.4rem + 3vw,3.4rem);margin:0 0 .5rem}
+.page-hero p{color:var(--muted);margin:0 auto;max-width:60ch}
+
+/* ==== BLOG GRID ==== */
+.blog{padding:24px 0 70px}
+.blog-grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:22px
+}
+.post{
+  background:#fff;border:1px solid var(--line);border-radius:22px;overflow:hidden;
+  box-shadow:var(--shadow);transition:transform .18s ease, box-shadow .18s ease
+}
+.post:hover{transform:translateY(-6px)}
+.post .post-body{padding:16px}
+.post h3{margin:.25rem 0 .3rem}
+.post p{color:var(--muted)}
+.link{color:var(--violet);font-weight:700;text-decoration:none}
+.link:hover{text-decoration:underline}
+
+/* images toujours clean */
+.img-cover{position:relative;overflow:hidden}
+.img-cover>img{width:100%;height:100%;object-fit:cover;object-position:center}
+.aspect-16x9{aspect-ratio:16/9}
+.aspect-4x3{aspect-ratio:4/3}
+
+/* ==== FOOTER ==== */
+.footer{border-top:1px solid var(--line);background:#fff;margin-top:60px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:26px 0}
+.footer a{text-decoration:none;color:var(--text)}
+
+@media(max-width:900px){
+  .nav-links{display:none}
+  .footer-inner{flex-direction:column}
+}

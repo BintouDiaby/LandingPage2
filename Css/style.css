@@ -1,0 +1,169 @@
+:root {
+  --primary: #6d5efc;
+  --accent: #ffd34e;
+  --bg: #f7f5ff;
+  --text: #201a3b;
+  --muted: #5d5680;
+  --shadow: 0 10px 30px rgba(93, 86, 128, .15);
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.container {
+  width: min(1100px, 90%);
+  margin-inline: auto;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.brand {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.brand-logo {
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+  margin: 0 10px;
+  font-weight: 500;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 60px 0;
+  gap: 40px;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  line-height: 1.2;
+}
+
+.highlight.purple {
+  background: linear-gradient(180deg, transparent 60%, rgba(109, 94, 252, .25) 0);
+}
+
+.highlight.yellow {
+  background: linear-gradient(180deg, transparent 60%, rgba(255, 211, 78, .45) 0);
+}
+
+.actions {
+  margin-top: 20px;
+  display: flex;
+  gap: 1rem;
+}
+
+.btn {
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: .8rem 1.3rem;
+  box-shadow: var(--shadow);
+}
+
+.btn.primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn.ghost {
+  background: #fff;
+  color: var(--text);
+  border: 1px solid #eee;
+}
+
+.features {
+  padding: 60px 0;
+  text-align: center;
+}
+
+.features .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: var(--shadow);
+  transition: transform .2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.accent {
+  background: linear-gradient(135deg, #fff, #f3f0ff);
+}
+
+.footer {
+  text-align: center;
+  padding: 30px 0;
+  background: #fff;
+  margin-top: 50px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+/* ===== Images universelles ===== */
+img { display:block; max-width:100%; height:auto; }
+
+/* Image fluide (garde les proportions) */
+.img-fluid { width:100%; height:auto; }
+
+/* Cadre recadré: l’image remplit le cadre sans se déformer */
+.img-cover {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;           /* ajuste si tu veux plus/moins arrondi */
+  box-shadow: var(--shadow);
+}
+.img-cover > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;             /* clé pour un recadrage propre */
+  object-position: center;       /* centre le sujet */
+}
+
+/* Utilitaires d’aspect ratio (évite les sauts de layout) */
+.aspect-16x9 { aspect-ratio: 16 / 9; }
+.aspect-4x3  { aspect-ratio: 4 / 3; }
+.aspect-1x1  { aspect-ratio: 1 / 1; }
+
+/* Exemples spécifiques aux sections (facultatif) */
+.hero-media .img-cover { transform: rotate(-2deg); } /* style Dribbble-like */
+.post .img-cover { border-radius: 18px; }
